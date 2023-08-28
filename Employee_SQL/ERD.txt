@@ -1,0 +1,37 @@
+
+Department as dp
+-
+dept_no PK int
+dept_name string INDEX
+
+
+Employee as ep
+-
+emp_no int
+dept_no int FK >-  dp.dept_no
+
+
+Manager as mg
+----
+man_emp_no PK int
+dept_no int FK >- dp.dept_no
+
+Title_names as tn
+-
+title_id PK int
+title
+
+Emplyoee_info as ei # Table documentation comment 2
+------------
+emp_no PK int FK -< ep.emp_no
+emp_title_id int FK >- tn.title_id
+birth_date
+first_name
+last_name
+sex
+hire_date
+
+Salaries as sa
+----
+emp_no int FK - ei.emp_no
+salary
